@@ -20,4 +20,4 @@ app.use('/clickup/comments', clickupRoute.comments)
 
 app.use('/token', authRoute)
 
-app.listen(port, () => console.log(`ZCool API is running on Port ${port}`))
+app.listen(port, () => console.log(`server is running at ${port}`))

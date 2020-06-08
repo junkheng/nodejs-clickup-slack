@@ -9,7 +9,7 @@ exports.tokenRequest = [
                 _id: "0001",
                 firstName: "admin",
                 lastName: "admin",
-                email: "admin@zcool.com"
+                email: "admin@someemail.com"
             };
 
             // Prepare JWT token for authentication
