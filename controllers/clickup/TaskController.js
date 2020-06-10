@@ -1,4 +1,4 @@
-const { apiRequest, apiResponse } = require('../../utility')
+const { apiRequest, apiResponse, slackPosting } = require('../../utility')
 const auth = require("../../utility/jwt");
 
 // Get all Unarchived tasks
@@ -36,6 +36,7 @@ exports.taskCreate = [
             apiResponse.error(req, res, response.data)
         } else {
             apiResponse.success(req, res, response.data)
+            const slack = await apiRequest.slackPosting(response.data)
         }
     }
 ]
