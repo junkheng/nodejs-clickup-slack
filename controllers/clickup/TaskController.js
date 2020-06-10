@@ -32,12 +32,11 @@ exports.taskCreate = [
     auth,
     async function (req, res) {
         const response = await apiRequest.processClickUpRequest(`/list/${req.params.list_id}/task`, 'POST', req.body)
-        const slack = await apiRequest.slackPosting(req.body)
         if (response.error) {
             apiResponse.error(req, res, response.data)
         } else {
             apiResponse.success(req, res, response.data)
-            console.log(res)
+            const slack = await apiRequest.slackPosting(response.data)
         }
     }
 ]

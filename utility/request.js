@@ -9,10 +9,8 @@ const token = process.env.SLACK_TOKEN;
 const web = new WebClient(token);
 
 const slackPosting = async(data) => {
-    console.log('something here')
-    console.log(data)
     const result = await web.chat.postMessage({
-        text: data.name,
+        text: 'New task created here: ' + data.url,
         channel: process.env.SLACK_CHANNEL_ID
     });
     console.log(result)
